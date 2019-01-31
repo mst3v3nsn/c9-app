@@ -43,4 +43,4 @@ spec:
         - name: kube-config
           mountPath: "/root/.kube/"         
         ports:
-        - containerPort: __CONT_PORT__
+        - containerPort: 3000
