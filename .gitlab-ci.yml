@@ -1,0 +1,40 @@
+# C9-APP - gitlab-ci.yml file for auto-deployments
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: docker:latest
+  variables:
+    DOCKER_HOST: tcp://localhost:2375
+  services:
+    - docker:dind
+  script:
+    - docker info
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWD $REGISTRY
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
+
+deploy:
+  stage: deploy
+  image: registry.gitlab.com/gitlab-examples/kubernetes-deploy
+  environment:
+    name: c9/$CI_COMMIT_REF_NAME
+    #temporary site hosting url
+    url: $URL_ENDPOINT
+  script:
+    - echo "${KUBE_CA_PEM}" > kube_ca.pem
+    - kubectl config set-cluster default --server=${KUBE_URL} --certificate-authority="$(pwd)/kube_ca.pem"
+    - kubectl config set-credentials default-admin --token=${KUBE_TOKEN}
+    - kubectl config set-context default --cluster=default-cluster --user=default-admin --namespace ${KUBE_NAMESPACE}
+    - kubectl config use-context default
+    - kubectl cluster-info
+    - cd manifests/
+    - sed -i "s/__CI_ENVIRONMENT_SLUG__/c9/" c9-app.yaml c9-ingress.yaml c9-service.yaml
+    - sed -i "s/__VERSION__/${CI_COMMIT_REF_NAME}/" c9-app.yaml c9-ingress.yaml c9-service.yaml
+    - kubectl get deployments -l app=${CI_ENVIRONMENT_SLUG}
+    - if [[ $(kubectl apply -f c9-app.yaml) == *"unchanged"* ]]; then kubectl patch deployment ${CI_ENVIRONMENT_SLUG} -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"ci-last-updated\":\"$(date +'%s')\"}}}}}"; fi
+    - kubectl apply -f c9-service.yaml || true
+    - kubectl apply -f c9-ingress.yaml
