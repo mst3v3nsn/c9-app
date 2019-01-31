@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: c9-service
+  namespace: default
+spec:
+  type: ClusterIP
+  ports:
+    - port: __SVC_PORT__
+      targetPort: __SVC_PORT__
+      protocol: TCP
+  selector:
+    app: __CI_ENVIRONMENT_SLUG__
