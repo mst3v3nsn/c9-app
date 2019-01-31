@@ -1,6 +1,6 @@
 # C9-App
 
-Foobar is a Python library for dealing with word pluralization.
+Application to authenticate users against Active Directory and create a cloud9 container for them while mounting a user's home directory and handling user mapping to retain user permission outside the container for NFS shares.
 
 ## Installation
 
