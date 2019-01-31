@@ -5,13 +5,13 @@ var Schema       = mongoose.Schema;
 
 var userSchema   = new Schema({
         user         : {
-	      username     : String,
+	username     : String,
         uidNum       : String,
         gidNum       : String,
         email        : String,
         password     : String,
-	      name	       : String,
-	      address      : String,
+	name	     : String,
+	address      : String,
         homeDir      : String,
         pod          : String
 }});
