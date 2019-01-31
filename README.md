@@ -45,6 +45,7 @@ Make sure you are using [Traefik](https://docs.traefik.io/configuration/backends
 ## Usage
 
 ```
+cd manifests
 kubectl create -f c9-app.yaml
 kubectl create -f c9-service.yaml
 kubectl create -f c9-ingress.yaml
