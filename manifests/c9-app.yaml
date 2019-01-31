@@ -1,0 +1,46 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+   name: __CI_ENVIRONMENT_SLUG__
+   namespace: __KUBE_NS__
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: __CI_ENVIRONMENT_SLUG__
+  template:
+    metadata:
+      name: __CI_ENVIRONMENT_SLUG__
+      labels:
+        app: __CI_ENVIRONMENT_SLUG__
+    spec:
+      volumes:
+      - name: ldap-config
+        projected:
+          sources:
+          - secret:
+              name: ldapconfig-c9
+              items:
+              - key: ldapConfig.js
+                path: ldapConfig.js
+                mode: 0640
+      - name: kube-config
+        projected:
+          sources:
+          - secret:
+              name: kubeconfig-c9
+              items:
+              - key: config
+                path: config
+                mode: 0600  
+      containers:
+      - name: c9-app
+        image: __IMAGE__
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: ldap-config
+          mountPath: "/c9auth/config/ldap/"
+        - name: kube-config
+          mountPath: "/root/.kube/"         
+        ports:
+        - containerPort: __CONT_PORT__
