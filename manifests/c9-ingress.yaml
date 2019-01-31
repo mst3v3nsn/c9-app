@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: __CI_ENVIRONMENT_SLUG__
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    traefik.frontend.entryPoints: "https"
+spec:
+  tls:
+  - hosts:
+    secretName: __CERT_NAME__
+  rules:
+  - host: __PORTAL_URL__
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: c9-service
+          servicePort: __SVC_PORT__
