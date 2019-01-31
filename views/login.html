@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title>Cloud9 IDE</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/structure.css">
+
+</head>
+<body>
+<form action="/login" method="post" class="box login">
+    <fieldset class="boxBody">
+        <center><img src="images/cloud9-logo.png" height="50" width="300"></center>
+        <% if (message.length > 0) { %>
+        <div class="alert alert-message"><%= message %></div>
+        <% } %>
+        <label>Username</label>
+        <input type="text" tabindex="1" placeholder="Enter your username" name="email" required>
+        <label>Password</label>
+        <input type="password" tabindex="2" name="password" required>
+    </fieldset>
+    <footer>
+        <input type="submit" class="btnLogin" value="Login" tabindex="4">
+        <!--</a><a href="/auth/google" ><img src="images/g.jpg" height="30px"/> </a>-->
+    </footer>
+</form>
+</body>
+</html>
