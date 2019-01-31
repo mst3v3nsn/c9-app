@@ -1,0 +1,4 @@
+.idea
+config/ldap
+config/kube
+manifests/*
