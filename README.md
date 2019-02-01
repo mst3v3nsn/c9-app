@@ -7,8 +7,8 @@ Project is created with:
 * NodeJS 10 Javascript Engine
 * Express Framework
 * Passport Middleware
-* ![Mongoose MongoDB Object Modeling](readme/mongoose.jpg)
 
+|[![NodeJS](https://nodsjs.com/)](readme/nodejs.jpg) | [![Express](https://expressjs.com/)](readme/express.jpg) | [![Passport](readme/passport.jpg)](http://www.passportjs.org/) | [![Mongoose](readme/mongoose.jpg)](https://mongoosejs.com/) |
 
 Main NPM Module that interacts with Kubernetes:
 
