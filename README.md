@@ -4,31 +4,15 @@ Application to authenticate users against Active Directory and create a cloud9 c
 
 ## Technologies
 Project is created with:
-* NodeJS: 8
+* NodeJS 10 Javascript Engine
+* Express Framework
+* Passport Middleware
+* Mongoose MongoDB Object Modeling
 
-NPM Modules:
 
-* bcrypt-nodejs@0.0.3
-* body-parser@1.18.2
-* connect@3.6.6
-* connect-flash@0.1.1
-* connect-mongo@2.0.1
-* cookie-parser@1.4.3
-* ejs@2.5.7
-* express@4.16.2
-* express-session@1.15.6
-* fs@0.0.1-security
-* http@0.0.0
-* joi@13.1.2
-* kubernetes-client@4.0.0
-* mongoose@5.0.7
-* passport@0.4.0
-* passport-ldapauth@2.0.0
-* path@0.12.7
-* socket.io@2.0.4
-* str-replace@0.0.5
-* string-contains@0.1.0
-* sync@0.2.5
+Main NPM Module that interacts with Kubernetes:
+
+* kubernetes-client
 
 ## Installation
 
