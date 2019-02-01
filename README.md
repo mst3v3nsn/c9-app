@@ -12,9 +12,13 @@ Application to authenticate users against Active Directory and create a cloud9 c
 
 ### Backend
 
-| [![Kubernetes](readme/kubernetes.jpg)](https://kubernetes.io) | [![Traefik](readme/traefik.jpg)](https://traefik.io) | [![MongoDB](readme/mongo.jpg)](https://www.mongodb.com) | [![Gitlab](readme/gitlab.jpg)](https://gitlab.com) | [![Docker](readme/docker.jpg)](https://www.docker.com) |
+| [![Kubernetes](readme/kubernetes.jpg)](https://kubernetes.io) | [![Traefik](readme/traefik.jpg)](https://traefik.io) | [![MongoDB](readme/mongo.jpg)](https://www.mongodb.com) | [![Gitlab](readme/gitlab.jpg)](https://gitlab.com) |
 |:---:|:---:|:---:|:---:|
-| https://kubernetes.io | https://traefik.io | https://www.mongodb.com | https://gitlab.com | https://www.docker.com |
+| https://kubernetes.io | https://traefik.io | https://www.mongodb.com | https://gitlab.com | 
+
+[ ![Docker](readme/docker.jpg)](https://www.docker.com) |
+|:---:|
+| https://www.docker.com |
 
 ### NPM
 
