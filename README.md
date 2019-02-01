@@ -4,15 +4,21 @@ Application to authenticate users against Active Directory and create a cloud9 c
 
 ## Technologies
 
-Project is created with:
+### Frontend
 
-| [![NodeJS](readme/nodejs.jpg)](https://nodejs.org) | [![Express](readme/express.jpg)](https://expressjs.com) | [![Passport](readme/passport.jpg)](https://www.passportjs.com) | [![Mongoose](readme/mongoose.jpg)](https://mongoosejs.com) |
+| [![NodeJS](readme/nodejs.jpg)](https://nodejs.org) | [![Express](readme/express.jpg)](https://expressjs.com) | [![Passport](readme/passport.jpg)](https://www.passportjs.org) | [![Mongoose](readme/mongoose.jpg)](https://mongoosejs.com) |
 |:---:|:---:|:---:|:---:|
-| https://nodejs.org | https://expressjs.com | https://www.passportjs.com | https://mongoosejs.com |
+| https://nodejs.org | https://expressjs.com | https://www.passportjs.org | https://mongoosejs.com |
 
 Main NPM Module that interacts with Kubernetes:
 
-* kubernetes-client
+[kubernetes-client](https://github.com/godaddy/kubernetes-client)
+
+### Backend
+
+| [![Kubernetes](readme/kubernetes.jpg)](https://kubernetes.io) | [![Traefik](readme/traefik.jpg)](https://traefik.io) | [![MongoDB](readme/mongo.jpg)](https://www.mongodb.com) | [![Gitlab](readme/gitlab.jpg)](https://gitlab.com) |
+|:---:|:---:|:---:|:---:|
+| https://kubernetes.io | https://traefik.io | https://www.mongodb.com | https://gitlab.com |
 
 ## Installation
 
