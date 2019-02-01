@@ -3,12 +3,12 @@
 Application to authenticate users against Active Directory and create a cloud9 container for them while mounting a user's home directory and handling user mapping to retain user permission outside the container for NFS shares.
 
 ## Technologies
-Project is created with:
-* NodeJS 10 Javascript Engine
-* Express Framework
-* Passport Middleware
 
-|[![NodeJS](https://nodsjs.com/)](readme/nodejs.jpg) | [![Express](https://expressjs.com/)](readme/express.jpg) | [![Passport](readme/passport.jpg)](http://www.passportjs.org/) | [![Mongoose](readme/mongoose.jpg)](https://mongoosejs.com/) |
+Project is created with:
+
+| [![NodeJS](readme/nodejs.jpg)](https://nodejs.org) | [![Express](readme/express.jpg)](https://expressjs.com) | [![Passport](readme/passport.jpg)](https://www.passportjs.com) | [![Mongoose](readme/mongoose.jpg)](https://mongoosejs.com) |
+|:---:|:---:|:---:|:---:|
+| https://nodejs.org | https://expressjs.com | https://www.passportjs.com | https://mongoosejs.com |
 
 Main NPM Module that interacts with Kubernetes:
 
